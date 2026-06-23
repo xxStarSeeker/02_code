@@ -1,6 +1,7 @@
 """
 FastAPI wrapper for job classification and recommendation. All model logic
-lives in scripts/predict.py (tech-11 ensemble) and scripts/recommend.py.
+lives in scripts/predict.py (tech-11 ensemble + Other guardrail) and
+scripts/recommend.py.
 
     .venv\\Scripts\\uvicorn.exe app:app --reload      # docs at /docs
 """
@@ -20,7 +21,6 @@ from pydantic import BaseModel, Field
 
 from scripts.predict import predict_batch, predict_category
 from scripts.recommend import get_available_roles, match_embedding, recommend_jobs
-from scripts.benchmark_classifiers import clean_text
 
 app = FastAPI(title="Job Market Intelligence API", version="1.0.0")
 app.add_middleware(CORSMiddleware, allow_origins=["*"],
@@ -45,7 +45,7 @@ class RecommendRequest(BaseModel):
 
 @app.get("/health")
 def health() -> dict:
-    return {"status": "ok", "model": "ensemble"}
+    return {"status": "ok", "model": "tech-11 ensemble + Other guardrail"}
 
 
 @app.get("/roles")
@@ -55,8 +55,8 @@ def roles() -> dict:
 
 @app.post("/classify")
 def classify(req: ClassifyRequest) -> dict:
-    """Classify one job description into one of the 11 tech categories."""
-    return predict_category(clean_text(req.description))
+    """Classify one job description, or return Other if outside tech scope."""
+    return predict_category(req.description)
 
 
 @app.post("/classify/batch")

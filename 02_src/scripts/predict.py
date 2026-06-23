@@ -2,11 +2,12 @@
 Inference API for the tech-11 job-category ensemble in models/best_model/.
 
 Classifies raw job descriptions into 11 tech categories with the
-soft-voting ensemble benchmarked at 0.94 test accuracy. Inputs are cleaned
-with the training-time clean_text; weights come from ensemble.json, class
-order from metadata.json. Degrades gracefully: no GPU -> transformers on
-CPU (warning); a component that fails to load is dropped and the rest
-renormalised - worst case TF-IDF only.
+soft-voting ensemble benchmarked at 0.94 test accuracy, then applies an
+"Other" guardrail for clearly non-tech or low-confidence postings. Inputs
+are cleaned with the training-time clean_text; weights come from
+ensemble.json, class order from metadata.json. Degrades gracefully: no GPU
+-> transformers on CPU (warning); a component that fails to load is dropped
+and the rest renormalised - worst case TF-IDF only.
 
     python scripts/predict.py --text "We need a Kubernetes engineer ..."
     python scripts/predict.py --csv new_jobs.csv [--output out.csv]
@@ -18,6 +19,7 @@ from __future__ import annotations
 import argparse
 import functools
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Callable
@@ -30,6 +32,27 @@ from scripts.benchmark_classifiers import clean_text  # noqa: E402
 
 BEST_MODEL_DIR = PROJECT_ROOT / "models" / "best_model"
 BATCH_SIZE = 16
+OUT_OF_SCOPE_CATEGORY = "Other"
+MIN_IN_SCOPE_CONFIDENCE = 0.45
+MIN_IN_SCOPE_MARGIN = 0.08
+
+_TECH_SCOPE_TERMS = {
+    "api", "application", "automation", "backend", "business analyst", "cloud",
+    "code", "coding", "computer science", "cybersecurity", "dashboard", "data",
+    "database", "deploy", "developer", "devops", "etl", "frontend", "infrastructure",
+    "information technology", "it support", "java", "javascript", "kubernetes",
+    "machine learning", "ml", "model",
+    "network", "pipeline", "product manager", "programming", "python", "qa",
+    "quality assurance", "requirements", "scrum", "security", "software", "sql",
+    "system", "testing", "ui", "ux",
+}
+
+_CLEAR_NON_TECH_TERMS = {
+    "accountant", "barista", "cashier", "chef", "cook", "customer service",
+    "driver", "finance", "hostess", "hr", "human resources", "maintenance",
+    "marketing", "nurse", "procurement", "receptionist", "restaurant", "sales",
+    "teacher", "technician", "waiter", "warehouse",
+}
 
 PredictFn = Callable[[list[str]], np.ndarray]   # cleaned texts -> (n, n_classes)
 
@@ -145,16 +168,44 @@ def _predictor() -> _Ensemble:
     return _Ensemble()
 
 
+def _has_scope_signal(text: str) -> bool:
+    lowered = text.lower()
+    return any(re.search(rf"\b{re.escape(term)}\b", lowered) for term in _TECH_SCOPE_TERMS)
+
+
+def _has_clear_non_tech_signal(text: str) -> bool:
+    lowered = text.lower()
+    return any(re.search(rf"\b{re.escape(term)}\b", lowered) for term in _CLEAR_NON_TECH_TERMS)
+
+
+def _is_out_of_scope(text: str, confidence: float, margin: float) -> bool:
+    """Reject descriptions that do not look like one of the trained tech roles."""
+    has_scope = _has_scope_signal(text)
+    has_non_tech = _has_clear_non_tech_signal(text)
+    if has_non_tech and not has_scope:
+        return True
+    return (confidence < MIN_IN_SCOPE_CONFIDENCE or margin < MIN_IN_SCOPE_MARGIN) and not has_scope
+
+
 def predict_batch(texts: list[str]) -> list[dict]:
     """Classify raw job descriptions in bulk; one result dict per input."""
     if not texts:
         return []
     pred = _predictor()
     out = []
-    for row in pred.predict_probs(list(texts)):
-        i = int(row.argmax())
-        out.append({"predicted_category": pred.classes[i],
-                    "confidence": float(row[i]),
+    for text, row in zip(texts, pred.predict_probs(list(texts))):
+        order = np.argsort(row)[::-1]
+        i = int(order[0])
+        confidence = float(row[i])
+        runner_up = float(row[int(order[1])]) if len(order) > 1 else 0.0
+        margin = confidence - runner_up
+        predicted = pred.classes[i]
+        out_of_scope = _is_out_of_scope(text, confidence, margin)
+        out.append({"predicted_category": OUT_OF_SCOPE_CATEGORY if out_of_scope else predicted,
+                    "raw_predicted_category": predicted,
+                    "confidence": confidence,
+                    "decision_margin": margin,
+                    "is_out_of_scope": out_of_scope,
                     "all_scores": {c: float(p) for c, p in zip(pred.classes, row)}})
     return out
 
@@ -190,7 +241,10 @@ def _cli() -> None:
         res = predict_category(args.text)
         top3 = sorted(res["all_scores"].items(), key=lambda kv: -kv[1])[:3]
         print(f"predicted_category: {res['predicted_category']}")
+        if res.get("is_out_of_scope"):
+            print(f"raw_model_choice:    {res['raw_predicted_category']}")
         print(f"confidence:         {res['confidence']:.4f}")
+        print(f"decision_margin:    {res['decision_margin']:.4f}")
         print("top 3:              " + ", ".join(f"{c} ({p:.3f})" for c, p in top3))
     else:
         _run_csv(args.csv, args.output)

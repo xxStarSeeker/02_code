@@ -5,7 +5,7 @@ import re
 import requests
 
 # ---------------------------------------------------------------------------
-# 1. The raw job description (exactly as you pasted earlier)
+# 1. The raw job description 
 # ---------------------------------------------------------------------------
 RAW_DESC = r"""About the job
 We're looking for a Senior Data Analyst/ Analytics Engineer to own data and analytics across our Gen AI and Recommendation Systems work. It's a hybrid role: you'll own the centralized reporting that turns data into decisions and build the pipelines and data models that feed it — defining the right metrics for each product we ship rather than waiting on others to prepare your data. For Recommendation Systems, you'll bring enough ML understanding to engineer the right features and evaluation metrics, partnering closely with Data Scientists, ML Engineers, Product, and Backend teams.

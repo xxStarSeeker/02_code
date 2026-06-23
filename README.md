@@ -1,17 +1,18 @@
-# TalentFit — Job Market Intelligence System
+﻿# TalentFit â€” Job Market Intelligence System
 
-**SDA AI Engineering Bootcamp · Group 4** (with WeCloudData)
-Abdulwahab Almusharraf · Raghad Khan · Thamer Al Otaibi · Yazeed Alshawmer
+**SDA AI Engineering Bootcamp Â· Group 4** (with WeCloudData)
+Abdulwahab Almusharraf Â· Raghad Khan Â· Thamer Al Otaibi Â· Yazeed Alshawmer
 
 TalentFit is a two-part AI system for the job market:
 
-1. **Classification** — reads a job posting and predicts its role category (11 tech roles)
-   with a soft-voting ensemble (TF-IDF + BGE embeddings + DistilBERT + ModernBERT),
-   ~0.94 test accuracy.
-2. **Recommendation** — takes a resume, finds the best-fit jobs by semantic + skill-aware
+1. **Classification** - reads a job posting and predicts one of 11 technical role
+   categories using a soft-voting ensemble (TF-IDF + BGE embeddings + DistilBERT +
+   ModernBERT), with an **Other** guardrail for clearly non-tech or low-confidence
+   postings. The tech-role benchmark is ~0.94 test accuracy.
+2. **Recommendation** â€” takes a resume, finds the best-fit jobs by semantic + skill-aware
    matching, and explains each match (matched skills, missing skills, a plain-language reason).
    Two strategies: **Fast Search** (embedding) and **Best Match** (hybrid). Both run fully
-   offline — no LLM needed at recommendation time.
+   offline â€” no LLM needed at recommendation time.
 
 Both models are served by a small **FastAPI** API, with a **Streamlit** demo where you can
 upload a resume and see ranked, explained matches. Job categories were produced once, offline,
@@ -24,25 +25,25 @@ disagreements); that step is not needed to run the app.
 
 ```
 02_code/
-├── 01_data/                     Source datasets
-│   ├── raw/saudi_job_market.csv         ~47k raw Saudi postings (49 cols)
-│   ├── job_data_saudi_clean.csv         cleaned postings (~13.9k)
-│   └── labels/                          LLM labels + disagreement resolution
-├── 02_src/                      Code (runnable as-is)
-│   ├── app.py                           FastAPI service
-│   ├── streamlit_app.py                 resume-upload demo UI
-│   ├── scripts/                         predict.py, recommend.py, benchmarks, skills…
-│   ├── Backend/                         LLM-labeling pipeline + config
-│   ├── models/best_model/               trained ensemble (TF-IDF, BGE, DistilBERT, ModernBERT)
-│   ├── data/processed/                  cleaned_data.csv, BGE embeddings, FAISS index, splits
-│   ├── job_data_saudi_clean.csv         job metadata for result cards (title/company/location)
-│   ├── notebooks/                       TalentFit_clean_and_eda.ipynb, manual_compare.ipynb
-│   ├── cvs_test/                        validation on real resumes (88% correct)
-│   ├── Dockerfile, .dockerignore        optional containerized run
-│   └── requirements.txt                 (copy, for the Docker build context)
-├── 03_assets/                   Confusion matrices, comparison tables, logo, app screenshots
-├── requirements.txt
-└── README.md                    (this file)
+â”œâ”€â”€ 01_data/                     Source datasets
+â”‚   â”œâ”€â”€ raw/saudi_job_market.csv         ~47k raw Saudi postings (49 cols)
+â”‚   â”œâ”€â”€ job_data_saudi_clean.csv         cleaned postings (~13.9k)
+â”‚   â””â”€â”€ labels/                          LLM labels + disagreement resolution
+â”œâ”€â”€ 02_src/                      Code (runnable as-is)
+â”‚   â”œâ”€â”€ app.py                           FastAPI service
+â”‚   â”œâ”€â”€ streamlit_app.py                 resume-upload demo UI
+â”‚   â”œâ”€â”€ scripts/                         predict.py, recommend.py, benchmarks, skillsâ€¦
+â”‚   â”œâ”€â”€ Backend/                         LLM-labeling pipeline + config
+â”‚   â”œâ”€â”€ models/best_model/               trained ensemble (TF-IDF, BGE, DistilBERT, ModernBERT)
+â”‚   â”œâ”€â”€ data/processed/                  cleaned_data.csv, BGE embeddings, FAISS index, splits
+â”‚   â”œâ”€â”€ job_data_saudi_clean.csv         job metadata for result cards (title/company/location)
+â”‚   â”œâ”€â”€ notebooks/                       TalentFit_clean_and_eda.ipynb, manual_compare.ipynb
+â”‚   â”œâ”€â”€ cvs_test/                        validation on real resumes (88% correct)
+â”‚   â”œâ”€â”€ Dockerfile, .dockerignore        optional containerized run
+â”‚   â””â”€â”€ requirements.txt                 (copy, for the Docker build context)
+â”œâ”€â”€ 03_assets/                   Confusion matrices, comparison tables, logo, app screenshots
+â”œâ”€â”€ requirements.txt
+â””â”€â”€ README.md                    (this file)
 ```
 
 > Note: `01_data/` holds the **source** datasets. The **derived** artifacts the code loads at
@@ -57,7 +58,7 @@ disagreements); that step is not needed to run the app.
 - Packages in `requirements.txt`: numpy, pandas, scikit-learn, scipy, sentence-transformers,
   transformers, faiss-cpu, fastapi, uvicorn, pydantic, streamlit, PyPDF2, joblib, matplotlib,
   seaborn, tqdm, requests, aiohttp.
-- **PyTorch** — installed separately so you get the right CPU/GPU build. A GPU is optional;
+- **PyTorch** â€” installed separately so you get the right CPU/GPU build. A GPU is optional;
   the transformer models fall back to CPU automatically (slower).
 - **Ollama** is **not** required to run the app. It is only used to *re-generate* the labeled
   dataset (`Backend/scripts/`), which is already provided.
@@ -73,17 +74,17 @@ python -m venv .venv
 # macOS/Linux
 .venv/bin/pip install -r requirements.txt
 
-# PyTorch — pick the build for your machine from https://pytorch.org
+# PyTorch â€” pick the build for your machine from https://pytorch.org
 # CPU example:
 .venv\Scripts\pip install torch
 ```
 
-## Run (local — recommended)
+## Run (local â€” recommended)
 
 All commands below are run from `02_code/02_src/` (paths are relative to that folder).
 
 ```bash
-# 1) Inference API  → Swagger UI at http://127.0.0.1:8000/docs
+# 1) Inference API  â†’ Swagger UI at http://127.0.0.1:8000/docs
 .venv\Scripts\uvicorn app:app --reload
 
 # 2) Classify one job description
@@ -115,7 +116,7 @@ curl -X POST http://127.0.0.1:8000/recommend -H "Content-Type: application/json"
   \"strategy\": \"hybrid\", \"min_score\": 0.3 }"
 ```
 
-## Run with Docker (self-contained — two commands)
+## Run with Docker (self-contained â€” two commands)
 
 The `Dockerfile` in `02_src/` builds a **self-contained** image: the trained models, the
 precomputed embeddings/FAISS index, the CPU build of PyTorch, and the BGE embedding model are all
@@ -131,21 +132,21 @@ docker run -p 8000:8000 -p 8501:8501 -e OLLAMA_URL=http://host.docker.internal:1
 ```
 
 Then open:
-- **API + Swagger docs** → http://localhost:8000/docs
-- **Streamlit demo** → http://localhost:8501
+- **API + Swagger docs** â†’ http://localhost:8000/docs
+- **Streamlit demo** â†’ http://localhost:8501
 
 Notes: the first build downloads PyTorch + the embedding model and copies the trained models, so it
-takes a few minutes and the image is large (~5 GB) — this is the trade-off for a one-command run
+takes a few minutes and the image is large (~5 GB) â€” this is the trade-off for a one-command run
 with nothing else to install. Build needs internet; once built, the container runs offline.
-(Verified end-to-end: `docker build` + `docker run` → `/health`, `/classify`, `/recommend`, and the
+(Verified end-to-end: `docker build` + `docker run` â†’ `/health`, `/classify`, `/recommend`, and the
 Streamlit demo all work.)
 
 ## Configuration / environment
 
-- **No paid API keys** are required. The core app (classify + resume→jobs recommendations) runs
+- **No paid API keys** are required. The core app (classify + resumeâ†’jobs recommendations) runs
   with **no LLM**.
 - The only LLM-backed feature is the optional **"resume tips"** button. It calls a local **Ollama**
-  model and **auto-detects whatever is installed** — `qwen2.5` 3b / 7b / 32b all work, no config
+  model and **auto-detects whatever is installed** â€” `qwen2.5` 3b / 7b / 32b all work, no config
   needed (it prefers the largest installed qwen2.5, falling back to any available model).
 - To use it: have Ollama running. Locally it's found at `http://localhost:11434` automatically;
   from **Docker**, pass `-e OLLAMA_URL=http://host.docker.internal:11434` (see above). Override the
@@ -155,18 +156,17 @@ Streamlit demo all work.)
   `02_src/models/best_model/`.
 
 ## Results (held-out test set)
-
-- **Classification:** ensemble **0.94 accuracy / 0.943 macro-F1** across 11 tech roles.
-- **Recommendation:** **Best Match (hybrid)** — Precision@5 **0.90**, MRR **1.00**;
-  Fast Search (embedding) — Precision@5 0.80, MRR 0.71.
+- **Classification:** ensemble **0.94 accuracy / 0.943 macro-F1** across 11 tech roles,
+  plus an `Other` guardrail for non-tech or low-confidence postings.
+- **Recommendation:** **Best Match (hybrid)** â€” Precision@5 **0.90**, MRR **1.00**;
+  Fast Search (embedding) â€” Precision@5 0.80, MRR 0.71.
 - **Real-resume check:** **88%** correct on 60 real CVs from a public Hugging Face dataset.
 
 See `03_assets/` for confusion matrices and the benchmark tables, and `03_project_report/`
 for the full report.
 
 ## Limitations / known issues
-
-- The 0.94 classifier covers the **11 tech roles**; non-tech postings are forced into the
-  nearest tech class (the recommender spans all 37 roles).
+- The 0.94 classifier benchmark covers the **11 tech roles** only. `Other` is a guardrail,
+  not a separately benchmarked trained class.
 - Recommendation metrics use a **synthetic** (skill-overlap) relevance set, not human labels.
 - English only; very long resumes are truncated by the transformer token limits (512/1024).
