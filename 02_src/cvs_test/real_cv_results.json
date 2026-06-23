@@ -1,0 +1,1101 @@
+{
+  "classifier": {
+    "accuracy": 0.8833333333333333,
+    "n": 60,
+    "detail": [
+      {
+        "true_cat": "Data Science",
+        "expected_role": "Data Scientist",
+        "predicted": "Data Scientist",
+        "confidence": 0.703,
+        "match": true
+      },
+      {
+        "true_cat": "Data Science",
+        "expected_role": "Data Scientist",
+        "predicted": "Data Scientist",
+        "confidence": 0.804,
+        "match": true
+      },
+      {
+        "true_cat": "Data Science",
+        "expected_role": "Data Scientist",
+        "predicted": "Data Scientist",
+        "confidence": 0.442,
+        "match": true
+      },
+      {
+        "true_cat": "Data Science",
+        "expected_role": "Data Scientist",
+        "predicted": "Data Scientist",
+        "confidence": 0.344,
+        "match": true
+      },
+      {
+        "true_cat": "Data Science",
+        "expected_role": "Data Scientist",
+        "predicted": "Data Scientist",
+        "confidence": 0.388,
+        "match": true
+      },
+      {
+        "true_cat": "DevOps Engineer",
+        "expected_role": "DevOps Engineer",
+        "predicted": "DevOps Engineer",
+        "confidence": 0.441,
+        "match": true
+      },
+      {
+        "true_cat": "DevOps Engineer",
+        "expected_role": "DevOps Engineer",
+        "predicted": "DevOps Engineer",
+        "confidence": 0.528,
+        "match": true
+      },
+      {
+        "true_cat": "DevOps Engineer",
+        "expected_role": "DevOps Engineer",
+        "predicted": "DevOps Engineer",
+        "confidence": 0.763,
+        "match": true
+      },
+      {
+        "true_cat": "DevOps Engineer",
+        "expected_role": "DevOps Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.347,
+        "match": false
+      },
+      {
+        "true_cat": "DevOps Engineer",
+        "expected_role": "DevOps Engineer",
+        "predicted": "QA Engineer",
+        "confidence": 0.449,
+        "match": false
+      },
+      {
+        "true_cat": "Python Developer",
+        "expected_role": "Software Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.787,
+        "match": true
+      },
+      {
+        "true_cat": "Python Developer",
+        "expected_role": "Software Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.524,
+        "match": true
+      },
+      {
+        "true_cat": "Python Developer",
+        "expected_role": "Software Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.515,
+        "match": true
+      },
+      {
+        "true_cat": "Python Developer",
+        "expected_role": "Software Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.701,
+        "match": true
+      },
+      {
+        "true_cat": "Python Developer",
+        "expected_role": "Software Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.512,
+        "match": true
+      },
+      {
+        "true_cat": "Java Developer",
+        "expected_role": "Software Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.72,
+        "match": true
+      },
+      {
+        "true_cat": "Java Developer",
+        "expected_role": "Software Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.61,
+        "match": true
+      },
+      {
+        "true_cat": "Java Developer",
+        "expected_role": "Software Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.832,
+        "match": true
+      },
+      {
+        "true_cat": "Java Developer",
+        "expected_role": "Software Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.836,
+        "match": true
+      },
+      {
+        "true_cat": "Java Developer",
+        "expected_role": "Software Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.786,
+        "match": true
+      },
+      {
+        "true_cat": "DotNet Developer",
+        "expected_role": "Software Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.883,
+        "match": true
+      },
+      {
+        "true_cat": "DotNet Developer",
+        "expected_role": "Software Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.4,
+        "match": true
+      },
+      {
+        "true_cat": "DotNet Developer",
+        "expected_role": "Software Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.809,
+        "match": true
+      },
+      {
+        "true_cat": "DotNet Developer",
+        "expected_role": "Software Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.785,
+        "match": true
+      },
+      {
+        "true_cat": "DotNet Developer",
+        "expected_role": "Software Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.935,
+        "match": true
+      },
+      {
+        "true_cat": "ETL Developer",
+        "expected_role": "Data Engineer",
+        "predicted": "Data Engineer",
+        "confidence": 0.765,
+        "match": true
+      },
+      {
+        "true_cat": "ETL Developer",
+        "expected_role": "Data Engineer",
+        "predicted": "Data Engineer",
+        "confidence": 0.53,
+        "match": true
+      },
+      {
+        "true_cat": "ETL Developer",
+        "expected_role": "Data Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.42,
+        "match": false
+      },
+      {
+        "true_cat": "ETL Developer",
+        "expected_role": "Data Engineer",
+        "predicted": "Data Engineer",
+        "confidence": 0.743,
+        "match": true
+      },
+      {
+        "true_cat": "ETL Developer",
+        "expected_role": "Data Engineer",
+        "predicted": "Data Engineer",
+        "confidence": 0.379,
+        "match": true
+      },
+      {
+        "true_cat": "Database",
+        "expected_role": "Data Engineer",
+        "predicted": "Data Engineer",
+        "confidence": 0.423,
+        "match": true
+      },
+      {
+        "true_cat": "Database",
+        "expected_role": "Data Engineer",
+        "predicted": "Data Engineer",
+        "confidence": 0.331,
+        "match": true
+      },
+      {
+        "true_cat": "Database",
+        "expected_role": "Data Engineer",
+        "predicted": "DevOps Engineer",
+        "confidence": 0.342,
+        "match": false
+      },
+      {
+        "true_cat": "Database",
+        "expected_role": "Data Engineer",
+        "predicted": "Data Engineer",
+        "confidence": 0.487,
+        "match": true
+      },
+      {
+        "true_cat": "Database",
+        "expected_role": "Data Engineer",
+        "predicted": "Data Engineer",
+        "confidence": 0.437,
+        "match": true
+      },
+      {
+        "true_cat": "Hadoop",
+        "expected_role": "Data Engineer",
+        "predicted": "Data Engineer",
+        "confidence": 0.528,
+        "match": true
+      },
+      {
+        "true_cat": "Hadoop",
+        "expected_role": "Data Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.373,
+        "match": false
+      },
+      {
+        "true_cat": "Hadoop",
+        "expected_role": "Data Engineer",
+        "predicted": "Data Engineer",
+        "confidence": 0.477,
+        "match": true
+      },
+      {
+        "true_cat": "Hadoop",
+        "expected_role": "Data Engineer",
+        "predicted": "Software Engineer",
+        "confidence": 0.583,
+        "match": false
+      },
+      {
+        "true_cat": "Hadoop",
+        "expected_role": "Data Engineer",
+        "predicted": "Data Engineer",
+        "confidence": 0.508,
+        "match": true
+      },
+      {
+        "true_cat": "Network Security Engineer",
+        "expected_role": "Cybersecurity Analyst",
+        "predicted": "Cybersecurity Analyst",
+        "confidence": 0.729,
+        "match": true
+      },
+      {
+        "true_cat": "Network Security Engineer",
+        "expected_role": "Cybersecurity Analyst",
+        "predicted": "Cybersecurity Analyst",
+        "confidence": 0.809,
+        "match": true
+      },
+      {
+        "true_cat": "Network Security Engineer",
+        "expected_role": "Cybersecurity Analyst",
+        "predicted": "Cybersecurity Analyst",
+        "confidence": 0.732,
+        "match": true
+      },
+      {
+        "true_cat": "Network Security Engineer",
+        "expected_role": "Cybersecurity Analyst",
+        "predicted": "Cybersecurity Analyst",
+        "confidence": 0.799,
+        "match": true
+      },
+      {
+        "true_cat": "Network Security Engineer",
+        "expected_role": "Cybersecurity Analyst",
+        "predicted": "Cloud Engineer",
+        "confidence": 0.305,
+        "match": false
+      },
+      {
+        "true_cat": "Business Analyst",
+        "expected_role": "Business Analyst",
+        "predicted": "Business Analyst",
+        "confidence": 0.658,
+        "match": true
+      },
+      {
+        "true_cat": "Business Analyst",
+        "expected_role": "Business Analyst",
+        "predicted": "Business Analyst",
+        "confidence": 0.685,
+        "match": true
+      },
+      {
+        "true_cat": "Business Analyst",
+        "expected_role": "Business Analyst",
+        "predicted": "Business Analyst",
+        "confidence": 0.768,
+        "match": true
+      },
+      {
+        "true_cat": "Business Analyst",
+        "expected_role": "Business Analyst",
+        "predicted": "Business Analyst",
+        "confidence": 0.745,
+        "match": true
+      },
+      {
+        "true_cat": "Business Analyst",
+        "expected_role": "Business Analyst",
+        "predicted": "Business Analyst",
+        "confidence": 0.796,
+        "match": true
+      },
+      {
+        "true_cat": "Testing",
+        "expected_role": "QA Engineer",
+        "predicted": "QA Engineer",
+        "confidence": 0.458,
+        "match": true
+      },
+      {
+        "true_cat": "Testing",
+        "expected_role": "QA Engineer",
+        "predicted": "QA Engineer",
+        "confidence": 0.607,
+        "match": true
+      },
+      {
+        "true_cat": "Testing",
+        "expected_role": "QA Engineer",
+        "predicted": "QA Engineer",
+        "confidence": 0.565,
+        "match": true
+      },
+      {
+        "true_cat": "Testing",
+        "expected_role": "QA Engineer",
+        "predicted": "QA Engineer",
+        "confidence": 0.74,
+        "match": true
+      },
+      {
+        "true_cat": "Testing",
+        "expected_role": "QA Engineer",
+        "predicted": "QA Engineer",
+        "confidence": 0.784,
+        "match": true
+      },
+      {
+        "true_cat": "Automation Testing",
+        "expected_role": "QA Engineer",
+        "predicted": "QA Engineer",
+        "confidence": 0.769,
+        "match": true
+      },
+      {
+        "true_cat": "Automation Testing",
+        "expected_role": "QA Engineer",
+        "predicted": "QA Engineer",
+        "confidence": 0.19,
+        "match": true
+      },
+      {
+        "true_cat": "Automation Testing",
+        "expected_role": "QA Engineer",
+        "predicted": "QA Engineer",
+        "confidence": 0.726,
+        "match": true
+      },
+      {
+        "true_cat": "Automation Testing",
+        "expected_role": "QA Engineer",
+        "predicted": "QA Engineer",
+        "confidence": 0.883,
+        "match": true
+      },
+      {
+        "true_cat": "Automation Testing",
+        "expected_role": "QA Engineer",
+        "predicted": "QA Engineer",
+        "confidence": 0.847,
+        "match": true
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "cv_category": "Data Science",
+      "detected_skills": [
+        "Analytics",
+        "Angular",
+        "Apache Kafka",
+        "Cassandra",
+        "classification",
+        "computer vision",
+        "dashboards",
+        "Data Science",
+        "Deep Learning",
+        "Docker",
+        "Elasticsearch",
+        "ERP",
+        "Git",
+        "HBase",
+        "HTML",
+        "Java",
+        "JavaScript",
+        "jQuery",
+        "Kibana",
+        "Machine Learning",
+        "matplotlib",
+        "monitoring",
+        "MySQL",
+        "NLP",
+        "NLTK",
+        "Node.js",
+        "NumPy",
+        "Pandas",
+        "Python",
+        "QA",
+        "regression",
+        "reporting",
+        "scikit-learn",
+        "security",
+        "spaCy",
+        "SQL",
+        "Tableau",
+        "Word"
+      ],
+      "experience": "Skills * Programming Languages: Python (pandas, numpy, scipy, scikit-learn, matplotlib), Sql, Java, JavaScript/JQuery. * Machine learning: Regression, SVM, Na\u00c3\u00afve Bayes, KNN, Random Forest, Decision Trees, Boosting techniques, Cluster Analysis, Word Embedding, Sentiment Analysis, Natural Language pr",
+      "classifier_prediction": "Data Scientist",
+      "classifier_confidence": 0.703,
+      "recommend_role": "Data Scientist",
+      "recommendations": [
+        {
+          "job_id": "d0cd91ae53149868",
+          "score": 0.5884,
+          "matched_skills": [
+            "dashboards",
+            "Data Science",
+            "ERP",
+            "Machine Learning",
+            "matplotlib",
+            "Pandas",
+            "Python",
+            "reporting",
+            "SQL",
+            "Word"
+          ],
+          "missing_skills": [
+            "AI",
+            "Architecture",
+            "BI",
+            "Data Modeling",
+            "data pipelines",
+            "data visualization",
+            "documentation",
+            "ETL",
+            "feature engineering",
+            "ML",
+            "MLOps",
+            "model evaluation",
+            "OpenShift",
+            "Power BI",
+            "statistics",
+            "Storage",
+            "Visualization"
+          ],
+          "reason": "best match score 0.59; semantic/experience score 0.70; skill coverage 0.26"
+        },
+        {
+          "job_id": "0d7c7f8e5e4ccc02",
+          "score": 0.5862,
+          "matched_skills": [
+            "Analytics",
+            "Cassandra",
+            "classification",
+            "Data Science",
+            "Deep Learning",
+            "Elasticsearch",
+            "ERP",
+            "Java",
+            "Machine Learning",
+            "NLP",
+            "Pandas",
+            "Python"
+          ],
+          "missing_skills": [
+            "AI",
+            "Apache Spark",
+            "Big Data",
+            "C++",
+            "Chatbots",
+            "Clustering",
+            "data integrity",
+            "Data Modeling",
+            "Data Quality",
+            "Hadoop",
+            "Keras",
+            "Matlab",
+            "ML",
+            "NET",
+            "predictive modeling",
+            "project management",
+            "quality assurance",
+            "Shell",
+            "statistics",
+            "TensorFlow",
+            "Visualization",
+            "visualization tools"
+          ],
+          "reason": "best match score 0.59; semantic/experience score 0.68; skill coverage 0.32"
+        },
+        {
+          "job_id": "ae39155a4f6c38de",
+          "score": 0.5861,
+          "matched_skills": [
+            "Analytics",
+            "computer vision",
+            "Data Science",
+            "Deep Learning",
+            "ERP",
+            "Java",
+            "Machine Learning",
+            "matplotlib",
+            "NLP",
+            "Python",
+            "regression",
+            "SQL",
+            "Tableau"
+          ],
+          "missing_skills": [
+            "A/B testing",
+            "Apache Spark",
+            "AWS",
+            "Azure",
+            "BI",
+            "Big Data",
+            "cloud platforms",
+            "Clustering",
+            "data analysis",
+            "data management",
+            "data pipelines",
+            "Data Quality",
+            "data visualization",
+            "Distributed Computing",
+            "GCP",
+            "Hadoop",
+            "neural networks",
+            "Power BI",
+            "predictive modeling",
+            "PyTorch",
+            "statistical analysis",
+            "TensorFlow",
+            "testing",
+            "Visualization",
+            "visualization tools"
+          ],
+          "reason": "best match score 0.59; semantic/experience score 0.67; skill coverage 0.34"
+        }
+      ]
+    },
+    {
+      "cv_category": "DevOps Engineer",
+      "detected_skills": [
+        "Access",
+        "automation",
+        "AWS",
+        "Azure",
+        "cloud computing",
+        "CloudFormation",
+        "DevOps",
+        "EC2",
+        "HTML",
+        "Lambda",
+        "Linux",
+        "Linux/Unix",
+        "monitoring",
+        "MySQL",
+        "Puppet",
+        "Python",
+        "QA",
+        "RDS",
+        "scripting",
+        "Shell",
+        "Shell scripting",
+        "Spotfire",
+        "SQL",
+        "testing",
+        "Unix",
+        "Windows"
+      ],
+      "experience": "2 years of experience",
+      "classifier_prediction": "DevOps Engineer",
+      "classifier_confidence": 0.441,
+      "recommend_role": "DevOps Engineer",
+      "recommendations": [
+        {
+          "job_id": "ae1c442a973c5455",
+          "score": 0.6238,
+          "matched_skills": [
+            "AWS",
+            "Azure",
+            "DevOps",
+            "monitoring",
+            "Python",
+            "scripting",
+            "Shell"
+          ],
+          "missing_skills": [
+            "Ansible",
+            "Bash",
+            "Chef",
+            "CI/CD",
+            "cloud infrastructure",
+            "cloud platforms",
+            "containerization",
+            "Docker",
+            "GCP",
+            "Infrastructure as Code",
+            "Kubernetes",
+            "PowerShell",
+            "Software Development",
+            "Terraform"
+          ],
+          "reason": "best match score 0.62; semantic/experience score 0.74; skill coverage 0.27"
+        },
+        {
+          "job_id": "ffa994913f47ea97",
+          "score": 0.623,
+          "matched_skills": [
+            "automation",
+            "AWS",
+            "Azure",
+            "DevOps",
+            "Linux",
+            "monitoring",
+            "scripting",
+            "Shell",
+            "Shell scripting"
+          ],
+          "missing_skills": [
+            "Ansible",
+            "CI/CD",
+            "cloud platforms",
+            "Docker",
+            "documentation",
+            "ELK",
+            "GCP",
+            "Grafana",
+            "Jenkins",
+            "Kubernetes",
+            "logging",
+            "Prometheus",
+            "security",
+            "Terraform"
+          ],
+          "reason": "best match score 0.62; semantic/experience score 0.72; skill coverage 0.35; experience 2/2 years"
+        },
+        {
+          "job_id": "b30f3fdf9a63cd12",
+          "score": 0.6141,
+          "matched_skills": [
+            "automation",
+            "AWS",
+            "Azure",
+            "DevOps",
+            "Linux",
+            "monitoring",
+            "Python",
+            "QA",
+            "scripting",
+            "Shell",
+            "Shell scripting",
+            "SQL"
+          ],
+          "missing_skills": [
+            "AI",
+            "Argo",
+            "CI/CD",
+            "cloud infrastructure",
+            "cloud platforms",
+            "containerization",
+            "Docker",
+            "GCP",
+            "Git",
+            "GitHub",
+            "GitHub Actions",
+            "GitOps",
+            "Go",
+            "Grafana",
+            "Infrastructure as Code",
+            "Kubernetes",
+            "logging",
+            "networking",
+            "NoSQL",
+            "Prometheus",
+            "Terraform",
+            "version control"
+          ],
+          "reason": "best match score 0.61; semantic/experience score 0.66; skill coverage 0.46; experience 2/0 years"
+        }
+      ]
+    },
+    {
+      "cv_category": "ETL Developer",
+      "detected_skills": [
+        "Agile",
+        "Data Warehouse",
+        "ETL",
+        "Jira",
+        "monitoring",
+        "scripting",
+        "Shell",
+        "Shell scripting",
+        "SQL",
+        "SQL Server",
+        "Unix"
+      ],
+      "experience": "Technical Summary \u00e2\u0080\u00a2 Knowledge of Informatica Power Center (ver. 9.1 and 10) ETL Tool: Mapping designing, usage of multiple transformations. Integration of various data source like SQL Server tables, Flat Files, etc. into target data warehouse. \u00e2\u0080\u00a2 SQL/PLSQL working knowledge on Microsoft SQL serve",
+      "classifier_prediction": "Data Engineer",
+      "classifier_confidence": 0.765,
+      "recommend_role": "Data Engineer",
+      "recommendations": [
+        {
+          "job_id": "e9665c68eb0ee94b",
+          "score": 0.7193,
+          "matched_skills": [
+            "Agile",
+            "Data Warehouse",
+            "ETL",
+            "Jira",
+            "scripting",
+            "SQL",
+            "SQL Server"
+          ],
+          "missing_skills": [
+            "automation",
+            "AWS",
+            "Azure",
+            "CI/CD",
+            "cloud platforms",
+            "Cloud Storage",
+            "code reviews",
+            "compliance",
+            "Confluence",
+            "CRM",
+            "data governance",
+            "data integration",
+            "Data Modeling",
+            "data profiling",
+            "Data Quality",
+            "DevOps",
+            "GCP",
+            "IDQ",
+            "Informatica PowerCenter",
+            "MDM",
+            "Metadata Management",
+            "Performance Tuning",
+            "PL/SQL",
+            "RDBMS",
+            "reporting",
+            "REST",
+            "security",
+            "SOAP",
+            "Storage"
+          ],
+          "reason": "best match score 0.72; semantic/experience score 0.75; skill coverage 0.64"
+        },
+        {
+          "job_id": "86856e5c966953fb",
+          "score": 0.7106,
+          "matched_skills": [
+            "ETL",
+            "scripting",
+            "Shell",
+            "Shell scripting",
+            "SQL",
+            "Unix"
+          ],
+          "missing_skills": [
+            "automation",
+            "CDMP",
+            "code reviews",
+            "data integration",
+            "data management",
+            "Data Quality",
+            "SSIS",
+            "testing"
+          ],
+          "reason": "best match score 0.71; semantic/experience score 0.77; skill coverage 0.55"
+        },
+        {
+          "job_id": "5c8e5edd8a98477e",
+          "score": 0.707,
+          "matched_skills": [
+            "ETL",
+            "monitoring",
+            "scripting",
+            "Shell",
+            "Shell scripting",
+            "SQL",
+            "SQL Server",
+            "Unix"
+          ],
+          "missing_skills": [
+            "automation",
+            "AWS",
+            "AWS Glue",
+            "Azure",
+            "Azure Data Factory",
+            "Bash",
+            "BI",
+            "Business Intelligence",
+            "containerization",
+            "dashboards",
+            "data integration",
+            "data pipelines",
+            "data validation",
+            "Dataflow",
+            "Docker",
+            "documentation",
+            "Elasticsearch",
+            "ELK",
+            "GCP",
+            "Kibana",
+            "Kubernetes",
+            "Linux",
+            "Linux/Unix",
+            "Nagios",
+            "Performance Tuning",
+            "PostgreSQL",
+            "Power BI",
+            "Prometheus",
+            "Python",
+            "QlikView",
+            "REST",
+            "REST API",
+            "SOAP",
+            "SSIS",
+            "Tableau",
+            "Talend",
+            "web services"
+          ],
+          "reason": "best match score 0.71; semantic/experience score 0.70; skill coverage 0.73"
+        }
+      ]
+    },
+    {
+      "cv_category": "Network Security Engineer",
+      "detected_skills": [
+        "Cisco ASA",
+        "DNS",
+        "documentation",
+        "firewalls",
+        "iOS",
+        "ITIL",
+        "Juniper",
+        "monitoring",
+        "network",
+        "network security",
+        "networking",
+        "Nexus",
+        "routers",
+        "routing",
+        "security",
+        "SSL",
+        "Switches",
+        "VPN"
+      ],
+      "experience": "1 years of experience",
+      "classifier_prediction": "Cybersecurity Analyst",
+      "classifier_confidence": 0.729,
+      "recommend_role": "Cybersecurity Analyst",
+      "recommendations": [
+        {
+          "job_id": "e5a95c2d95fe8625",
+          "score": 0.5509,
+          "matched_skills": [
+            "firewalls",
+            "monitoring",
+            "network",
+            "network security",
+            "networking",
+            "security",
+            "Switches",
+            "VPN"
+          ],
+          "missing_skills": [
+            "Access",
+            "CCNA",
+            "CEH",
+            "CISSP",
+            "Cyber Kill Chain",
+            "cybersecurity",
+            "forensic analysis",
+            "GCIA",
+            "GCIH",
+            "IDS/IPS",
+            "Linux",
+            "MITRE ATT&CK",
+            "QRadar",
+            "SIEM",
+            "System Administration",
+            "TCP/IP",
+            "Unix",
+            "Windows"
+          ],
+          "reason": "best match score 0.55; semantic/experience score 0.59; skill coverage 0.44; experience 1/1 years"
+        },
+        {
+          "job_id": "260af73e800f730b",
+          "score": 0.5484,
+          "matched_skills": [
+            "firewalls",
+            "monitoring",
+            "network",
+            "networking",
+            "security",
+            "Switches",
+            "VPN"
+          ],
+          "missing_skills": [
+            "CCNA",
+            "CEH",
+            "CISSP",
+            "Cyber Kill Chain",
+            "cybersecurity",
+            "GCIA",
+            "GCIH",
+            "IDS/IPS",
+            "Linux",
+            "MITRE ATT&CK",
+            "QRadar",
+            "SIEM",
+            "System Administration",
+            "TCP/IP",
+            "Unix",
+            "Windows"
+          ],
+          "reason": "best match score 0.55; semantic/experience score 0.60; skill coverage 0.39; experience 1/1 years"
+        },
+        {
+          "job_id": "a3b14c090b88e444",
+          "score": 0.5433,
+          "matched_skills": [
+            "firewalls",
+            "security",
+            "VPN"
+          ],
+          "missing_skills": [
+            "Data Security",
+            "DLP"
+          ],
+          "reason": "best match score 0.54; semantic/experience score 0.67; skill coverage 0.17"
+        }
+      ]
+    },
+    {
+      "cv_category": "Java Developer",
+      "detected_skills": [
+        "Java",
+        "JavaScript"
+      ],
+      "experience": "Education Details \nAugust 2010 to May 2017 BE Electronics & Communication Jabalpur, Madhya Pradesh Takshshila institute of technology\nJava developer \n\n\nSkill Details \nJava, Javascript,- Exprience - 6 monthsCompany Details \ncompany - Wab It Softwere Pvt.  Ltd.\ndescription - Jr. Java Developer",
+      "classifier_prediction": "Software Engineer",
+      "classifier_confidence": 0.72,
+      "recommend_role": "Software Engineer",
+      "recommendations": [
+        {
+          "job_id": "f9b1e9783e840288",
+          "score": 0.7601,
+          "matched_skills": [
+            "Java",
+            "JavaScript"
+          ],
+          "missing_skills": [
+            "Angular",
+            "Data Modeling",
+            "HTTP",
+            "JSON",
+            "MongoDB",
+            "MySQL",
+            "NiFi",
+            "Node.js",
+            "NoSQL",
+            "PL/SQL",
+            "PostgreSQL",
+            "RDBMS",
+            "REST",
+            "REST API",
+            "Spring",
+            "Spring Boot",
+            "SQL",
+            "SQL Server",
+            "web services"
+          ],
+          "reason": "best match score 0.76; semantic/experience score 0.68; skill coverage 1.00"
+        },
+        {
+          "job_id": "f5eca85a8b6bcdcd",
+          "score": 0.7153,
+          "matched_skills": [
+            "Java",
+            "JavaScript"
+          ],
+          "missing_skills": [
+            "Agile",
+            "agile methodologies",
+            "Ajax",
+            "compliance",
+            "CSS3",
+            "Git",
+            "HTML",
+            "HTML5",
+            "jQuery",
+            "JSON",
+            "MVC",
+            "MySQL",
+            "PHP",
+            "project management",
+            "protocols",
+            "REST",
+            "SDLC",
+            "SOAP",
+            "Software Development",
+            "SQL",
+            "testing",
+            "unit testing"
+          ],
+          "reason": "best match score 0.72; semantic/experience score 0.62; skill coverage 1.00"
+        },
+        {
+          "job_id": "dd7353367a998a36",
+          "score": 0.7134,
+          "matched_skills": [
+            "Java",
+            "JavaScript"
+          ],
+          "missing_skills": [
+            "Ajax",
+            "Angular",
+            "DevOps",
+            "Hibernate",
+            "HTML",
+            "HTML5",
+            "jQuery",
+            "MySQL",
+            "React",
+            "RPA",
+            "SOAP",
+            "Spring",
+            "web services"
+          ],
+          "reason": "best match score 0.71; semantic/experience score 0.62; skill coverage 1.00"
+        }
+      ]
+    }
+  ]
+}

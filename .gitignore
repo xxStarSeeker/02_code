@@ -1,0 +1,80 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Local secrets and environment
+.env
+.env.*
+!.env.example
+**/.streamlit/secrets.toml
+
+# IDE / local assistant folders
+.vscode/
+.idea/
+.claude/
+.codex/
+.agents/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and runtime output
+*.log
+uvicorn*.log
+streamlit*.log
+
+# Local temporary outputs
+tmp/
+temp/
+*.tmp
+
+# Large datasets
+01_data/raw/
+01_data/raw/*
+01_data/job_data_saudi_clean.csv
+02_src/job_data_saudi_clean.csv
+
+# Temporary/offline labeling outputs
+**/disagreements.csv
+**/disagreements_llm_resolved.jsonl
+**/labels_all.jsonl
+**/labels_all.csv
+
+# Large generated ML artifacts
+# These are needed to run the trained app locally, but they are too large for normal GitHub.
+# Share them separately, use Git LFS, or regenerate/download them after cloning.
+02_src/models/
+02_src/data/processed/*.npy
+02_src/data/processed/*.index
+02_src/data/processed/*.pkl
+02_src/data/processed/*.joblib
+02_src/data/processed/job_embeddings_*
+02_src/data/processed/job_faiss_*
+
+# Keep lightweight processed data and reports trackable
+!02_src/data/processed/cleaned_data.csv
+!02_src/data/processed/skill_cooc.json
+!02_src/data/processed/skill_mappings_7b.jsonl
+!02_src/data/processed/skill_mappings_32b.jsonl
+!02_src/reports/recommendation_benchmark.csv
+!03_assets/*.csv
+!03_assets/*.png
+
+# Accidentally duplicated nested project copies
+**/Job Market Intelligence AI/

@@ -1,0 +1,20 @@
+# Build junk / local-only files (kept OUT of the image)
+__pycache__/
+*.pyc
+.git/
+.gitignore
+.venv/
+venv/
+env/
+.env
+.cache/
+.ipynb_checkpoints/
+*.log
+
+# Not needed to RUN the app (keeps the image smaller)
+notebooks/
+cvs_test/
+reports/
+
+# NOTE: models/ and data/processed/ are intentionally INCLUDED so the image is
+# self-contained and runs with a single `docker run` (no volume mounts needed).
