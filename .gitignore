@@ -78,3 +78,6 @@ temp/
 
 # Accidentally duplicated nested project copies
 **/Job Market Intelligence AI/
+
+# Streamlit Space (deployed separately to Hugging Face Spaces, not part of the GitHub repo)
+streamlit_space/
