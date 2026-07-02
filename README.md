@@ -10,6 +10,10 @@
 ![FAISS](https://img.shields.io/badge/FAISS-vector%20search-0467DF)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+> **Personal portfolio fork with enhancements** - the trained model weights are hosted on the
+> Hugging Face Hub, there is a one-click live Streamlit demo, an improved README, and repo
+> packaging cleanups. Based on the SDA AI Engineering Bootcamp Group 4 project.
+
 TalentFit is a two-part AI system for the job market, built on ~14k cleaned Saudi
 job postings. It **classifies** a job description into one of 11 tech roles with a
 soft-voting ensemble, and **recommends** the best-fit jobs for a candidate resume with
@@ -18,7 +22,37 @@ locally: no paid API keys, and the recommendation path needs no LLM at all.
 
 ---
 
+## 🚀 Live Demo
+
+**Try it in your browser:** [TalentFit on Hugging Face Spaces](https://huggingface.co/spaces/Yazeed337/talentfit-demo)
+
+<!-- If you rename the Space, update this URL. -->
+
+Upload a resume and get ranked, explained job matches, or classify a job description into one of
+11 tech roles - no setup, running entirely on the hosted Space.
+
+## 📦 Model Weights
+
+The trained ensemble (TF-IDF + BGE heads, DistilBERT, ModernBERT) is **not stored in this repo** -
+the transformer weights exceed GitHub's 100 MB per-file limit. They are hosted on the Hugging Face
+Hub and downloaded automatically on first run:
+
+- **Model repo:** [`Yazeed337/talentfit`](https://huggingface.co/Yazeed337/talentfit)
+- Fetched with `huggingface_hub.snapshot_download` into `02_src/models/best_model/`, after which the
+  existing `predict.py` / `recommend.py` load them with no code changes.
+- Stored in **fp16** (predictions identical to fp32, half the download).
+
+```bash
+pip install huggingface_hub
+huggingface-cli download Yazeed337/talentfit --local-dir 02_src/models/best_model
+```
+
+---
+
 ## Table of Contents
+
+- [Live Demo](#-live-demo)
+- [Model Weights](#-model-weights)
 
 - [Highlights](#highlights)
 - [Key Results](#key-results)
@@ -170,9 +204,10 @@ python -m venv .venv
 .venv/bin/pip install -r ../requirements.txt
 ```
 
-> On first run the BGE encoder (`BAAI/bge-base-en-v1.5`, ~400 MB) downloads from
-> HuggingFace once; after that the app runs offline. The trained classifier weights ship
-> under `models/best_model/`.
+> On first run the BGE encoder (`BAAI/bge-base-en-v1.5`, ~400 MB) and the trained ensemble
+> weights (from [`Yazeed337/talentfit`](https://huggingface.co/Yazeed337/talentfit)) download
+> from the Hugging Face Hub into `models/best_model/`; after that the app runs offline. See
+> [Model Weights](#-model-weights) above.
 
 ---
 
